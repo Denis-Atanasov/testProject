@@ -25,7 +25,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout the code
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       
       - name: Deploy to Primary EC2
         uses: easingthemes/ssh-deploy@v2.2.11
