@@ -1,3 +1,4 @@
+
 # This is a basic workflow to help you get started with Actions
 
 name: Continuous Deployment
@@ -29,7 +30,7 @@ jobs:
       
       - name: Deploy to Primary EC2
         uses: easingthemes/ssh-deploy@v2.2.11
-        env:
+        with:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           SOURCE: "./"
           REMOTE_HOST: ${{ secrets.EC2_HOST_B }}
@@ -38,7 +39,7 @@ jobs:
           
       - name: Deploy to Secondary EC2
         uses: easingthemes/ssh-deploy@v2.2.11
-        env:
+        with:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           SOURCE: "./"
           REMOTE_HOST: ${{ secrets.EC2_HOST_A }}
