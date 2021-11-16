@@ -33,7 +33,7 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           SOURCE: "./"
           REMOTE_HOST_B: ${{ secrets.EC2_HOST_B }}
-          REMOTE_USER: ${{ secrets.EC2_HOST_B_USER }}
+          REMOTE_USER: ${{ secrets.EC2_HOST_USER }}
           TARGET: "/var/www/html"
           
       - name: Deploy to Secondary EC2
@@ -42,6 +42,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
           SOURCE: "./"
           REMOTE_HOST_B: ${{ secrets.EC2_HOST_A }}
-          REMOTE_USER: ${{ secrets.EC2_HOST_A_USER }}
+          REMOTE_USER: ${{ secrets.EC2_HOST_USER }}
           TARGET: "/var/www/html"
           
